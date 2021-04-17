@@ -6,7 +6,7 @@ from a secondary phone to your primary phone so you do not miss out on (importan
 or other questionable apps. It stays at home all the time, that way there is not much activity on it and the collection of meaningful data can be somewhat limited. 
 
 At the moment the primary objective is to just forward messages from (group) chats to Signal.
-This is what I personally need the most since it is utopian to expect all of your work/uni/school/... colleagues to switch to Signal.
+This is what I personally need the most since it is utopian to expect all your work/uni/school/... colleagues to switch to Signal.
 But if demand is there I would love to implement more options like WhatsApp to Telegram, Messenger to Signal, etc. and a reply funciton.
 
 If you are interested in contributing to this project let me know, I would greatly appreciate your help!
