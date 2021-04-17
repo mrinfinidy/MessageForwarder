@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:background="@color/colorPrimary"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimaryDark"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/top_bar_title"
         android:gravity="center"
@@ -20,14 +22,46 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addForwardRule"
-        app:srcCompat="@drawable/icon_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20sp"
         android:clickable="true"
         android:focusable="true"
         android:backgroundTint="@color/colorAccent"
-        android:tint="@color/colorPrimary"/>
+        android:tint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_add" />
+
+    <ImageView
+        android:id="@+id/whatsappIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/arrow_right"
+        android:layout_alignBottom="@id/arrow_right"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_whatsapp" />
+
+    <ImageView
+        android:id="@+id/arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/addForwardRule"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_right_arrow" />
+
+    <ImageView
+        android:id="@+id/signalIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/arrow_right"
+        android:layout_alignBottom="@id/arrow_right"
+        android:visibility="invisible"
+
+        app:srcCompat="@drawable/ic_signal" />
 
 </RelativeLayout>
