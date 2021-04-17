@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">MessageForwarder</string>
+    <string name="app_name">Message Forwarder</string>
+    <!-- main activity layout -->
+    <string name="top_bar_title">Message Forwarder</string>
+    <string name="arrow_right">Arrow Right</string>
+    <string name="whatsapp_icon">WhatsApp Icon</string>
+    <string name="signal_icon">Signal Icon</string>
 </resources>

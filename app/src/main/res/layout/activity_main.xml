@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/top_bar_title"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:typeface="normal">
+    </TextView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addForwardRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/colorAccent"
+        android:tint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_add" />
+
+    <ImageView
+        android:id="@+id/whatsappIcon"
+        android:contentDescription="@string/whatsapp_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/arrow_right"
+        android:layout_alignBottom="@id/arrow_right"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_whatsapp" />
+
+    <ImageView
+        android:id="@+id/arrow_right"
+        android:contentDescription="@string/arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/addForwardRule"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_right_arrow" />
+
+    <ImageView
+        android:id="@+id/signalIcon"
+        android:contentDescription="@string/signal_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/arrow_right"
+        android:layout_toEndOf="@id/arrow_right"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_signal" />
+
+    <TextView
+        android:id="@+id/whatsappToSignalLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/arrow_right"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:text="TEST"
+        android:textAlignment="center"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>
