@@ -1,42 +1,44 @@
-package com.example.messageforwarder;
+package com.example.messageforwarder.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.media.Image;
+import android.content.Context;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.messageforwarder.R;
+import com.example.messageforwarder.onclicklisteners.AddForwardRule;
+import com.example.messageforwarder.onclicklisteners.WhatsappToSignal;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
+
+    public static Context mainContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mainContext = getApplicationContext();
 
-        //display layout
+        //topbar layout
         setTopBarLayout();
-        //icons
+        //icons layout
         ImageView arrowRight = findViewById(R.id.arrow_right);
         ImageView whatsapp = findViewById(R.id.whatsappIcon);
         ImageView signal = findViewById(R.id.signalIcon);
+        TextView whatsappToSignalLayer = findViewById(R.id.whatsappToSignalLayer);
+        setForwardRuleLayout(arrowRight, whatsapp, signal, whatsappToSignalLayer);
 
-        setForwardRuleLayout(arrowRight, whatsapp, signal);
-
-        final Boolean optionsDisplayed = new Boolean(false);
+        //add forward rule (display)
+        Boolean optionsDisplayed = new Boolean(false);
         FloatingActionButton addForwardRuleBtn = findViewById(R.id.addForwardRule);
-        addForwardRuleBtn.setOnClickListener(new ExternalOnClickListener(optionsDisplayed, arrowRight, whatsapp, signal));
+        addForwardRuleBtn.setOnClickListener(new AddForwardRule(optionsDisplayed, arrowRight, whatsapp, signal, whatsappToSignalLayer));
+        //Rule:WhatsApp to Signal
+        whatsappToSignalLayer.setOnClickListener(new WhatsappToSignal(mainContext));
     }
 
     private int getScreenHeight() {
@@ -59,16 +61,7 @@ public class MainActivity extends AppCompatActivity {
         topBar.setTextSize(screenHeight/(float)60);
     }
 
-    private void setForwardRuleLayout(ImageView arrowRight, ImageView whatsapp, ImageView signal) {
-        /*
-        int screenHeight = getScreenHeight();
-        FloatingActionButton addForwardRule = (FloatingActionButton)findViewById(R.id.addForwardRule);
-        RelativeLayout.LayoutParams addForwardRuleParams = (RelativeLayout.LayoutParams)addForwardRule.getLayoutParams();
-        addForwardRuleParams.height = screenHeight / 8;
-        addForwardRuleParams.width = screenHeight / 8;
-        addForwardRuleParams.bottomMargin = screenHeight / 16;
-        */
-
+    private void setForwardRuleLayout(ImageView arrowRight, ImageView whatsapp, ImageView signal, TextView whatsappToSignalLayer) {
         int screenHeight = getScreenHeight();
         //load icons and set their layout
         //arrow
@@ -83,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         iconParams = (RelativeLayout.LayoutParams)signal.getLayoutParams();
         iconParams.height = screenHeight / 9;
         iconParams.width = getScreenHeight() / 9;
+        //WhatsApp to Signal Layer
+        iconParams = (RelativeLayout.LayoutParams)whatsappToSignalLayer.getLayoutParams();
+        iconParams.height = screenHeight / 9;
+        iconParams.width = screenHeight / 3 + 30; //30sp offset for margin between icons --> make relative
     }
 
 

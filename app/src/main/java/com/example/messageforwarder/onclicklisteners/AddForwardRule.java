@@ -1,20 +1,24 @@
-package com.example.messageforwarder;
+package com.example.messageforwarder.onclicklisteners;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class ExternalOnClickListener implements View.OnClickListener {
+public class AddForwardRule implements View.OnClickListener {
 
     private Boolean optionsDisplayed;
     private ImageView arrowRight;
     private ImageView whatsapp;
     private ImageView signal;
+    private TextView whatsappToSignalLayer;
 
-    public ExternalOnClickListener(Boolean optionsDisplayed, ImageView arrowRight, ImageView whatsapp, ImageView signal) {
+    public AddForwardRule(Boolean optionsDisplayed, ImageView arrowRight, ImageView whatsapp,
+                          ImageView signal, TextView whatsappToSignalLayer) {
         this.optionsDisplayed = optionsDisplayed;
         this.arrowRight = arrowRight;
         this.whatsapp = whatsapp;
         this.signal = signal;
+        this.whatsappToSignalLayer = whatsappToSignalLayer;
     }
 
     @Override
@@ -28,10 +32,12 @@ public class ExternalOnClickListener implements View.OnClickListener {
             arrowRight.setVisibility(View.INVISIBLE);
             whatsapp.setVisibility(View.INVISIBLE);
             signal.setVisibility(View.INVISIBLE);
+            whatsappToSignalLayer.setEnabled(false);
         } else {
             arrowRight.setVisibility(View.VISIBLE);
             whatsapp.setVisibility(View.VISIBLE);
             signal.setVisibility(View.VISIBLE);
+            whatsappToSignalLayer.setEnabled(true);
         }
         optionsDisplayed = !optionsDisplayed;
     }

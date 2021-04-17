@@ -35,15 +35,17 @@
 
     <ImageView
         android:id="@+id/whatsappIcon"
+        android:contentDescription="@string/whatsapp_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/arrow_right"
+        android:layout_toStartOf="@id/arrow_right"
         android:layout_alignBottom="@id/arrow_right"
         android:visibility="invisible"
         app:srcCompat="@drawable/ic_whatsapp" />
 
     <ImageView
         android:id="@+id/arrow_right"
+        android:contentDescription="@string/arrow_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/addForwardRule"
@@ -56,12 +58,24 @@
 
     <ImageView
         android:id="@+id/signalIcon"
+        android:contentDescription="@string/signal_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/arrow_right"
         android:layout_alignBottom="@id/arrow_right"
+        android:layout_toEndOf="@id/arrow_right"
         android:visibility="invisible"
-
         app:srcCompat="@drawable/ic_signal" />
+
+    <TextView
+        android:id="@+id/whatsappToSignalLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/arrow_right"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:text="TEST"
+        android:textAlignment="center"
+        android:visibility="visible" />
+
 
 </RelativeLayout>
