@@ -32,12 +32,14 @@ public class AddForwardRule implements View.OnClickListener {
             arrowRight.setVisibility(View.INVISIBLE);
             whatsapp.setVisibility(View.INVISIBLE);
             signal.setVisibility(View.INVISIBLE);
-            whatsappToSignalLayer.setEnabled(false);
+            whatsappToSignalLayer.setVisibility(View.INVISIBLE);
+            whatsappToSignalLayer.setClickable(false);
         } else {
             arrowRight.setVisibility(View.VISIBLE);
             whatsapp.setVisibility(View.VISIBLE);
             signal.setVisibility(View.VISIBLE);
-            whatsappToSignalLayer.setEnabled(true);
+            whatsappToSignalLayer.setVisibility(View.VISIBLE);
+            whatsappToSignalLayer.setClickable(true);
         }
         optionsDisplayed = !optionsDisplayed;
     }

@@ -75,7 +75,7 @@
         android:clickable="false"
         android:text="TEST"
         android:textAlignment="center"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
 
 </RelativeLayout>

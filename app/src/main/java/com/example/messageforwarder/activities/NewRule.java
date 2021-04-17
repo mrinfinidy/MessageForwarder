@@ -11,6 +11,6 @@ public class NewRule extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView();
+        setContentView(R.layout.activity_new_rule);
     }
 }

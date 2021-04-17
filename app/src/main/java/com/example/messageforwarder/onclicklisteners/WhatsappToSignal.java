@@ -21,6 +21,7 @@ public class WhatsappToSignal implements View.OnClickListener {
 
     private void newRuleActivity(View v) {
         Intent newRule = new Intent(mainContext, NewRule.class);
+        newRule.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mainContext.startActivity(newRule);
     }
 }
