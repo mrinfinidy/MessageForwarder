@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,15 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //get screen size
-        int screenHeight = getScreenHeight();
-        int screenWidth = getScreenWidth();
-
         //display layout
-        TextView topBar = (TextView)findViewById(R.id.topBar);
-        RelativeLayout.LayoutParams topBarParams = (RelativeLayout.LayoutParams)topBar.getLayoutParams();
-        topBarParams.height = screenHeight / 6;
-        topBar.setTextSize(screenHeight/(float)60);
+        setTopBarLayout();
+        setAddForwardRuleLayout();
     }
 
     private int getScreenHeight() {
@@ -38,5 +34,19 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         return metrics.widthPixels;
+    }
+
+    private void setTopBarLayout() {
+        TextView topBar = (TextView)findViewById(R.id.topBar);
+        RelativeLayout.LayoutParams topBarParams = (RelativeLayout.LayoutParams)topBar.getLayoutParams();
+        topBarParams.height = getScreenHeight() / 6;
+        topBar.setTextSize(getScreenHeight()/(float)60);
+    }
+
+    private void setAddForwardRuleLayout() {
+        FloatingActionButton addForwardRule = (FloatingActionButton)findViewById(R.id.addForwardRule);
+        RelativeLayout.LayoutParams addForwardRuleParams = (RelativeLayout.LayoutParams)addForwardRule.getLayoutParams();
+        addForwardRuleParams.height = getScreenHeight() / 8;
+        addForwardRuleParams.width = getScreenHeight() / 8;
     }
 }
